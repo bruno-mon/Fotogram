@@ -1,0 +1,55 @@
+/* ==========================================================================
+   1. GLOBALER RESET (Die wichtigste Basis für jedes Webprojekt)
+   ========================================================================== */
+
+/* Das Sternchen gilt für ALLE HTML-Elemente auf der gesamten Webseite.
+   Es sorgt dafür, dass alle Browser bei Null starten und nichts willkürlich verschieben. */
+*, *::before, *::after {
+  /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
+  margin: 0;
+  
+  /* Padding ist der Innenabstand. Auch den setzen wir auf 0, um die volle Kontrolle zu haben. */
+  padding: 0;
+  
+  /* Extrem wichtig! Box-sizing sorgt dafür, dass Padding und Rahmen (Border) 
+     IN die Breite hineingerechnet werden und das Element nicht heimlich größer machen. */
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   2. BODY (Die Grundeinstellungen für die gesamte sichtbare Seite)
+   ========================================================================== */
+
+body {
+  /* Hier legen wir die Schriftart für das gesamte Projekt fest. */
+  font-family: sans-serif;
+  
+  /* Die Hintergrundfarbe der Webseite*/
+  background-color: #06171E;
+  
+  /* Die Standard-Textfarbe (ein dunkles Grau, das ist angenehmer zu lesen als reines Schwarz). */
+  color: #333333;
+  
+  /* Der Zeilenabstand für Texte, damit alles schön luftig und lesbar wirkt. */
+  line-height: 1.5;
+  
+  /* Sorgt dafür, dass die Seite MINDESTENS so hoch ist wie der gesamte Bildschirm (100 Viewport-Height). */
+  min-height: 100vh;
+}
+
+
+/* ==========================================================================
+   3. BILDER-BASIS (Damit deine Galerie-Bilder das Layout nicht sprengen)
+   ========================================================================== */
+
+img {
+  /* Bilder verhalten sich standardmäßig wie Text. Mit "block" machen wir sie zu einem eigenständigen Kasten. */
+  display: block;
+  
+  /* Das Bild darf NIEMALS breiter werden als der Container, in dem es drinsteckt (z.B. sein Raster-Kästchen). */
+  max-width: 100%;
+  
+  /* Die Höhe berechnet sich automatisch passend zur Breite, damit das Bild nicht verzerrt oder gestreckt wird. */
+  height: auto;
+}
