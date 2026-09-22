@@ -53,3 +53,12 @@ img {
   /* Die Höhe berechnet sich automatisch passend zur Breite, damit das Bild nicht verzerrt oder gestreckt wird. */
   height: auto;
 }
+
+header {
+    max-width: 1440px;
+    background-color: #09212A;
+}
+
+footer {
+    background-color: #09212A;
+}
