@@ -55,9 +55,21 @@ img {
 }
 
 header {
+   /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
+    display: flex;
+    /* Sorgt für abstand zwischen den Boxen */
+    justify-content: space-between;
+    /* Breite 100% und maximal 1440px */
+    width: 100%;
     max-width: 1440px;
+   /* Zentriert den Header auf Bildschirmen, die breiter als 1440px sind*/
+   margin: 0 auto;
+    /*Hintergrundfarbe*/
     background-color: #09212A;
+    /* Innenabstand der Objekte (Oben,Rechts,Unten,Links) */
+    padding: 20px 140px 20px 140px;
 }
+
 
 footer {
     background-color: #09212A;
