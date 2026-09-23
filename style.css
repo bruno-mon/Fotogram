@@ -66,8 +66,8 @@ header {
     justify-content: space-between;
     /* Breite 100% und maximal 1440px */
     width: 100%;
-    max-width: 1440px;
-   /* Zentriert den Header auf Bildschirmen, die breiter als 1440px sind*/
+    max-width: 1920px;
+   /* Zentriert den Header auf Bildschirmen, die breiter als 1920px sind*/
    margin: 0 auto;
     /*Hintergrundfarbe*/
     background-color: #09212A;
@@ -75,8 +75,12 @@ header {
     padding: 20px 140px 20px 140px;
 }
 main{
+    
    /* um den main content ind die länge zu ziehen und damit den footer immer ganz unten zu haben */
    flex-grow: 1;
+    /* Breite 100% und maximal 1440px */
+    width: 100%;
+    max-width: 1920px;
 }
 
 footer {
@@ -89,10 +93,10 @@ footer {
     align-items: center;
     /* Breite 100% und maximal 1440px */
     width: 100%;
-    max-width: 1440px;
+    max-width: 1920px;
     /* Höhe des Footers*/
     height: 128px;
-   /* Zentriert den Footer auf Bildschirmen, die breiter als 1440px sind*/
+   /* Zentriert den Footer auf Bildschirmen, die breiter als 1920px sind*/
    margin: 0 auto;
  
     background-color: #09212A;
