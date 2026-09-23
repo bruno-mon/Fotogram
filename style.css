@@ -22,6 +22,10 @@
    ========================================================================== */
 
 body {
+   /*hier wird display flex angewendet um nachher im main content flex-grow 1; umsetzen zu können (für Fotter an den boden kleben*/
+   display: flex;
+   /* column wird gebraucht damit alles untereinander angeordnet wird */
+   flex-direction: column;
   /* Hier legen wir die Schriftart für das gesamte Projekt fest. */
   font-family: sans-serif;
   
@@ -37,6 +41,7 @@ body {
   /* Sorgt dafür, dass die Seite MINDESTENS so hoch ist wie der gesamte Bildschirm (100 Viewport-Height). */
   min-height: 100vh;
 }
+
 
 
 /* ==========================================================================
@@ -69,8 +74,28 @@ header {
     /* Innenabstand der Objekte (Oben,Rechts,Unten,Links) */
     padding: 20px 140px 20px 140px;
 }
-
+main{
+   /* um den main content ind die länge zu ziehen und damit den footer immer ganz unten zu haben */
+   flex-grow: 1;
+}
 
 footer {
+    /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
+    display: flex;
+    
+    /* Sorgt für eine Horizontale zentrierung (von links nach rechts) */
+    justify-content: center;
+    /* sorgt für eine Vertikale zentrierung (von oben nach unten)*/
+    align-items: center;
+    /* Breite 100% und maximal 1440px */
+    width: 100%;
+    max-width: 1440px;
+    /* Höhe des Footers*/
+    height: 128px;
+   /* Zentriert den Footer auf Bildschirmen, die breiter als 1440px sind*/
+   margin: 0 auto;
+ 
     background-color: #09212A;
 }
+
+
