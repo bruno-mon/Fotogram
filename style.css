@@ -84,11 +84,17 @@ main{
      /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
   margin: 0 auto;
 }
+.main_title{
+   text-align: center;
+   padding: 20px;
+   
+}
 
 #galleri{
    display: flex;
    /* durch flex-wrap wrap wird den bildern erlaub in die nächste zeile zu springen*/
    flex-wrap: wrap;
+   justify-content: center;
    gap:16px;
    padding: 15px;
 }
@@ -98,7 +104,7 @@ main{
    2: flex-shrink (0) gibtn an, ob das bild schrumpfen darf bei null schrumpft es nicht unter 200px
    3: flex-basis (200px) blockiert die bilder auf die 200px wenn der platz kleiner wird springt das bild in die nächste reihe*/
 
- flex: 1 0 200px;        
+flex: 1 0 200px;        
   
   /* Verhindert, dass die Bilder verzerrt werden */
   height: 200px;          
