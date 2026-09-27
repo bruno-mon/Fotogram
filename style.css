@@ -85,6 +85,25 @@ main{
   margin: 0 auto;
 }
 
+#galleri{
+   display: flex;
+   /* durch flex-wrap wrap wird den bildern erlaub in die nächste zeile zu springen*/
+   flex-wrap: wrap;
+   gap:16px;
+   padding: 15px;
+}
+#galleri img {
+   /* flex: 1 0 200px ist eine kurzbeschreibung für drei befehele 
+   1:flex grow= (1)gibt an, ob das Bild ungenutzten platz füllen darf.
+   2: flex-shrink (0) gibtn an, ob das bild schrumpfen darf bei null schrumpft es nicht unter 200px
+   3: flex-basis (200px) blockiert die bilder auf die 200px wenn der platz kleiner wird springt das bild in die nächste reihe*/
+
+ flex: 1 0 200px;        
+  
+  /* Verhindert, dass die Bilder verzerrt werden */
+  height: 200px;          
+  object-fit: cover; 
+}
 footer {
     /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
