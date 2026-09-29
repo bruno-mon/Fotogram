@@ -49,16 +49,26 @@ function openDialog(index) {
   ////////////////*img in den Dialog übernehmen*////////////////////////
   let imgRef = document.getElementById("big_picture");
   imgRef.src = picture[index];
+
+  console.log(index);
   dialogRef.showModal();
 }
 ///////////////*Dialog Next and Back *///////////////
 function nextImage() {
   currentImageIndex++;
 
+  if (currentImageIndex >= 12) {
+    currentImageIndex = 0;
+  }
+
   openDialog(currentImageIndex);
 }
 function lastImage() {
   currentImageIndex--;
+  ///////////////* durch die if regel geht wird wen man vom ersten bild zurück will landet man am letzten*/////////////////////////////
+  if (currentImageIndex <= 0) {
+    currentImageIndex = 11;
+  }
 
   openDialog(currentImageIndex);
 }
