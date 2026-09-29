@@ -18,7 +18,32 @@
     <main>
       <h1 class="main_title">Mein Persönliches Album</h1>
       <div id="galleri"></div>
+
+      <dialog id="mydialog">
+        <header>
+          <h2 id="dialog_titel"></h2>
+          <div class="close_button" onclick="closeDialog()">
+            <button class="btn_x">
+              <img src="assets/icons/close.svg" alt="close_button" />
+            </button>
+          </div>
+        </header>
+        <section><img id="big_picture" /></section>
+        <footer>
+          <div class="arrow_buttons">
+            <button onclick="lastImage()" class="btn_back">
+              <img src="assets/icons/Arrow-Right.svg" alt="arrow_back" />
+            </button>
+            <p>Index</p>
+
+            <button onclick="nextImage()" class="btn_next">
+              <img src="assets/icons/Arrow-Right.svg" alt="arrow_next" />
+            </button>
+          </div>
+        </footer>
+      </dialog>
     </main>
+
     <footer>
       <div class="DevLogo_Box">
         <img

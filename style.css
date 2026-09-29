@@ -60,29 +60,36 @@ img {
 }
 
 header {
-   /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
+    /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
     /* Sorgt für abstand zwischen den Boxen */
-    justify-content: space-between;
+    justify-content:space-between;
+    
     /* Breite 100% und maximal 1440px */
     width: 100%;
     max-width: 1920px;
-   /* Zentriert den Header auf Bildschirmen, die breiter als 1920px sind*/
-   margin: 0 auto;
+    /* Zentriert den Header auf Bildschirmen, die breiter als 1920px sind*/
+    margin: 0 auto;
     /*Hintergrundfarbe*/
     background-color: #09212A;
     /* Innenabstand der Objekte (Oben,Rechts,Unten,Links) */
     padding: 20px 140px 20px 140px;
 }
+.Fotogram_logo{
+
+    min-width: 120px;
+  
+  
+}
 main{
     
    /* um den main content ind die länge zu ziehen und damit den footer immer ganz unten zu haben */
-   flex-grow: 1;
+    flex-grow: 1;
     /* Breite 100% und maximal 1440px */
     width: 100%;
     max-width: 1440px;
      /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
-  margin: 0 auto;
+    margin: 0 auto;
 }
 .main_title{
    text-align: center;
@@ -109,11 +116,19 @@ flex: 1 0 200px;
   /* Verhindert, dass die Bilder verzerrt werden */
   height: 200px;          
   object-fit: cover; 
+  /* durch trasform wird das bild in einer vorgegeben geschwindigkeit vergrößert und in den uhrsprungszustand gebracht
+  würde trasform direkt im hover effekt stehen würde es nur beim vergrößern funktionieren und beim weg gehen direkt schrumpfen*/
+  transition: transform 0.3s ease;
+}
+#galleri img:hover{
+   
+   /*vergrßert das bild beim hovern um angegeben wert*/
+
+   transform: scale(1.1);
 }
 footer {
     /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
-    
     /* Sorgt für eine Horizontale zentrierung (von links nach rechts) */
     justify-content: center;
     /* sorgt für eine Vertikale zentrierung (von oben nach unten)*/
@@ -123,9 +138,8 @@ footer {
     max-width: 1920px;
     /* Höhe des Footers*/
     height: 128px;
-   /* Zentriert den Footer auf Bildschirmen, die breiter als 1920px sind*/
-   margin: 0 auto;
- 
+    /* Zentriert den Footer auf Bildschirmen, die breiter als 1920px sind*/
+    margin: 0 auto;
     background-color: #09212A;
 }
 
