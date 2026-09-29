@@ -16,6 +16,7 @@ let picture = [
 // damit die Funktionen für "Weiter" und "Zurück" wissen, welches Bild als Nächstes geladen werden muss.
 let currentImageIndex = 0;
 
+///////////////////////////// Eine schleife die alle inhalte aus der liste (picture) wiedergibt /////////////////////
 function render() {
   let galleriRef = document.getElementById("galleri");
   for (let index = 0; index < picture.length; index++) {
@@ -50,7 +51,13 @@ function openDialog(index) {
   let imgRef = document.getElementById("big_picture");
   imgRef.src = picture[index];
 
+  //////////////////////////////* einen index mit der nummer des angezeigten bildes + max bilder ///////////////////////////
+  let showindex = document.getElementById("carousel-counter");
+  showindex.innerText = currentImageIndex + 1 + "/" + picture.length;
+  //////// console index anzeige für controlle bzw übung ///////////////////////
   console.log(index);
+
+  /////////////////der befehl um das Moadl/Dialog anzeigen zu lassen//////////////////////////
   dialogRef.showModal();
 }
 ///////////////*Dialog Next and Back *///////////////
