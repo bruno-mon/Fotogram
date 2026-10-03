@@ -10,7 +10,7 @@ let picture = [
   "assets/img/snow-bunting-6781122_1280.jpg",
   "assets/img/snow-leopard-cubs-8039138_1280.jpg",
   "assets/img/travel-8785493_1280.jpg",
-  "assets/img/winter-1675197_1280.jpg",
+  "assets/img/Welle.jpg",
 ];
 // Das globale "Gedächtnis" des Skripts: Speichert die Nummer (den Index) des aktuell im Dialog geöffneten Bildes,
 // damit die Funktionen für "Weiter" und "Zurück" wissen, welches Bild als Nächstes geladen werden muss.
