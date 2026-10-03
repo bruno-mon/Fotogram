@@ -167,11 +167,15 @@ Dialog.opened::backdrop{
    max-height: 80px;
    min-height: 20px;
 
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 40px;
+
 }
 .overlay_header h2 {
    color:aliceblue;
-   position: absolute;
-   left: 40px;
+  
 
 }
 
@@ -181,9 +185,7 @@ Dialog.opened::backdrop{
    align-items: end;
    background-color:#06171E;
    border: none;
-   position: absolute;
-   top: 22px;
-   right: 40px;
+  
    transition: transform 0.3s ease;
    
 }
