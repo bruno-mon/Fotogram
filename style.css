@@ -107,17 +107,20 @@ main{
 }
 #galleri img {
    /* flex: 1 0 200px ist eine kurzbeschreibung für drei befehele 
-   1:flex grow= (1)gibt an, ob das Bild ungenutzten platz füllen darf.
+   1: flex grow= (1)gibt an, ob das Bild ungenutzten platz füllen darf.
    2: flex-shrink (0) gibtn an, ob das bild schrumpfen darf bei null schrumpft es nicht unter 200px
    3: flex-basis (200px) blockiert die bilder auf die 200px wenn der platz kleiner wird springt das bild in die nächste reihe*/
 
-flex: 1 0 200px;        
+  flex: 1 0 200px;        
   
   /* Verhindert, dass die Bilder verzerrt werden */
-  height: 200px;          
+  height: 200px; 
+  width: 200px;         
   object-fit: cover; 
   /* durch trasform wird das bild in einer vorgegeben geschwindigkeit vergrößert und in den uhrsprungszustand gebracht
   würde trasform direkt im hover effekt stehen würde es nur beim vergrößern funktionieren und beim weg gehen direkt schrumpfen*/
+  
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 #galleri img:hover{
@@ -127,13 +130,14 @@ flex: 1 0 200px;
    transform: scale(1.1);
 }
 
-
-.image-overlay{
+/*======================================== Style Dialog ==================================*/
+.image_overlay{
    /* Ducrh *, *::before, *::after { margin 0} wird auch der Margin des Dialogs angesprochen und verändert deswegen geben wir hier das normal Margin fürs Display wieder her 
    damit er wieder in der Mitte geöffnet wird. */
    margin:auto;
-   border-radius: 3%;
+   border-radius: 4%;
    background-color: #06171E;
+   border: none;
 
 }
 /*
@@ -144,12 +148,58 @@ Dialog::backdrop{
    opacity: 0;
    background-color:#41555e80;
    transition: all 0.8s ease-in;
+   
 }
 Dialog.opened::backdrop{
    opacity: 1;
    background-color:#41555e80;
    transition: all 0.8s  ease-in;
 }
+.overlay_box{
+   display: flex;
+   flex-direction: column;
+   max-width: 75vh;
+   
+}
+/*==================================== Dialog Header = overlay_header ====================================*/
+.overlay_header{
+   max-height: 80px;
+   min-height: 20px;
+
+}
+
+.overlay_header button {
+   display: flex;
+   justify-content: center;
+   align-items: end;
+   background-color:#09212A;
+   border: none;
+   position: absolute;
+   top: 16px;
+   right: 16px;
+   
+}
+
+/*==================================== Dialog Main = overlay_main ====================================*/
+.overlay_main{
+   background-color: #06171E;
+   
+}
+.overlay_main img {
+   object-fit: contain;
+   width: 100%;
+   padding:40px;
+   
+}
+/*==================================== Dialog Footer = overlay_footer ====================================*/
+
+.overlay_footer{
+   max-height: 80px;
+   
+}
+
+
+/*====================================  Style Footer ====================================*/
 footer {
     /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
