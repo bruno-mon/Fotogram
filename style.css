@@ -32,8 +32,8 @@ body {
   /* Die Hintergrundfarbe der Webseite*/
   background-color: #06171E;
   
-  /* Die Standard-Textfarbe (ein dunkles Grau, das ist angenehmer zu lesen als reines Schwarz). */
-  color: #333333;
+  /* Die Standard-Textfarbe */
+  color: #dbd5d5;
   
   /* Der Zeilenabstand für Texte, damit alles schön luftig und lesbar wirkt. */
   line-height: 1.5;
@@ -125,6 +125,30 @@ flex: 1 0 200px;
    /*vergrßert das bild beim hovern um angegeben wert*/
 
    transform: scale(1.1);
+}
+
+
+.image-overlay{
+   /* Ducrh *, *::before, *::after { margin 0} wird auch der Margin des Dialogs angesprochen und verändert deswegen geben wir hier das normal Margin fürs Display wieder her 
+   damit er wieder in der Mitte geöffnet wird. */
+   margin:auto;
+   border-radius: 3%;
+   background-color: #06171E;
+
+}
+/*
+- Beim geschlossenen Dialog (opacity: 0) ist das Backdrop komplett unsichtbar.
+  - Sobald JS die Klasse '.opened' hinzufügt (opacity: 1), blendet der Browser 
+    das Backdrop über die Dauer der 'transition' (0.8s) weich ein. */
+Dialog::backdrop{
+   opacity: 0;
+   background-color:#41555e80;
+   transition: all 0.8s ease-in;
+}
+Dialog.opened::backdrop{
+   opacity: 1;
+   background-color:#41555e80;
+   transition: all 0.8s  ease-in;
 }
 footer {
     /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
