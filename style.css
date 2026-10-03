@@ -184,7 +184,11 @@ Dialog.opened::backdrop{
    position: absolute;
    top: 22px;
    right: 40px;
+   transition: transform 0.3s ease;
    
+}
+.overlay_header button:hover{
+   transform: scale(1.2);
 }
 
 /*==================================== Dialog Main = overlay_main ====================================*/
@@ -203,7 +207,28 @@ Dialog.opened::backdrop{
 .overlay_footer{
    background-color: #06171E;
    max-height: 80px;
-   
+   gap:70px;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 40px;
+}
+.overlay_footer button{
+   background-color: #06171E;
+   border: none;
+   transition: transform 0.3s ease;
+
+}
+.overlay_footer button:hover{
+
+transform: scale(1.2);
+}
+.btn_back{
+   rotate: 180deg;
+}
+.overlay_footer span{
+   color: aliceblue;
 }
 
 
