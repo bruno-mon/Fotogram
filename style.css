@@ -60,10 +60,7 @@ img {
 }
 
 header {
-    /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
-    display: flex;
-    /* Sorgt für abstand zwischen den Boxen */
-    justify-content:space-between;
+ 
     
     /* Breite 100% und maximal 1440px */
     width: 100%;
@@ -73,11 +70,25 @@ header {
     /*Hintergrundfarbe*/
     background-color: #09212A;
     /* Innenabstand der Objekte (Oben,Rechts,Unten,Links) */
-    padding: 20px 140px 20px 140px;
+    
+}
+
+.header_box{
+   /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
+    display: flex;
+    /* Sorgt für abstand zwischen den Boxen */
+    justify-content:flex-start;
+    max-width: 1440px;
 }
 .Fotogram_logo{
 
     min-width: 120px;
+   
+    padding: 20px 40px;
+
+    display:block;
+   
+    
   
   
 }
@@ -90,6 +101,7 @@ main{
     max-width: 1440px;
      /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
     margin: 0 auto;
+    padding: 20 40px;
 }
 .main_title{
    text-align: center;
@@ -103,7 +115,7 @@ main{
    flex-wrap: wrap;
    justify-content: center;
    gap:16px;
-   padding: 15px;
+   padding: 20px;
 }
 #galleri img {
    /* flex: 1 0 200px ist eine kurzbeschreibung für drei befehele 
@@ -129,6 +141,7 @@ main{
 
    transform: scale(1.1);
 }
+
 
 /*======================================== Style Dialog ==================================*/
 .image_overlay{
@@ -199,9 +212,11 @@ Dialog.opened::backdrop{
    
 }
 .overlay_main img {
-   object-fit: contain;
+   object-fit: cover;
    width: 100%;
    padding:40px;
+   width: 560px;
+   height: 375px;
    
 }
 /*==================================== Dialog Footer = overlay_footer ====================================*/
@@ -252,4 +267,27 @@ footer {
     background-color: #09212A;
 }
 
+/*========================================== @media (max-width: 680px) and (min-width: 371px) =======================================*/
 
+@media (max-width: 680px) and (min-width: 371px){
+
+   .header_box {
+      justify-content: center;
+      align-items: center;
+   }
+
+  #galleri {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 1fr 1fr = 2 Spalten, die sich den Platz teilen */
+        gap: 16px;   
+                    
+    }
+
+    /* In Zeile 115 und 116 wurde flex: 1 0 200px angegeben das muss hier aufgelöst werden weil das bild sonst nicht schrumpfen kann*/
+    #galleri img {
+        flex: none;         /* Löscht den flex-Befehl von oben */
+        width: 100%;        /* Macht das Bild genau so breit wie das Rasterkästchen */
+        object-fit: cover;  /* Schneidet das Bild sauber ab, ohne es zu verzerren */
+    }
+
+}
