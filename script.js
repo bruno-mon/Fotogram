@@ -30,7 +30,7 @@ function getTemplateHtml(index) {
   let nameohnejpg = gekürzterName.replace(".jpg", "");
   return `
     <div class="single_element">
-    <img onclick="openDialog(${index})" src="${picture[index]}" alt="$(nameohnejpg)" style="max-width: 100%;">
+    <img onclick="openDialog(${index})" src="${picture[index]}" alt="(${nameohnejpg})" style="max-width: 100%;">
     </div>`;
 }
 
