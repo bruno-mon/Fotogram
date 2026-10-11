@@ -65,7 +65,7 @@ function openDialog(index) {
 function nextImage() {
   currentImageIndex++;
 
-  if (currentImageIndex >= 12) {
+  if (currentImageIndex >= picture.length) {
     currentImageIndex = 0;
   }
 
@@ -74,8 +74,8 @@ function nextImage() {
 function lastImage() {
   currentImageIndex--;
   ///////////////* durch die if regel geht wird wen man vom ersten bild zurück will landet man am letzten*/////////////////////////////
-  if (currentImageIndex <= 0) {
-    currentImageIndex = 11;
+  if (currentImageIndex < 0) {
+    currentImageIndex = picture.length - 1;
   }
 
   openDialog(currentImageIndex);
