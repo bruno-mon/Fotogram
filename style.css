@@ -45,7 +45,7 @@ body {
 
 
 /* ==========================================================================
-   3. BILDER-BASIS (Damit deine Galerie-Bilder das Layout nicht sprengen)
+   3. BILDER-BASIS (Damit die Galerie-Bilder das Layout nicht sprengen)
    ========================================================================== */
 
 img {
@@ -94,7 +94,7 @@ header {
 }
 main{
     
-   /* um den main content ind die länge zu ziehen und damit den footer immer ganz unten zu haben */
+   /* um den main content in die länge zu ziehen und damit den footer immer ganz unten zu haben */
     flex-grow: 1;
     /* Breite 100% und maximal 1440px */
     width: 100%;
