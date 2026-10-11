@@ -101,7 +101,7 @@ main{
     max-width: 1440px;
      /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
     margin: 0 auto;
-    padding: 20 40px;
+    padding: 20px 40px;
 }
 .main_title{
    text-align: center;
