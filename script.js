@@ -64,7 +64,7 @@ function openDialog(index) {
 ///////////////*Dialog Next and Back *///////////////
 function nextImage() {
   currentImageIndex++;
-
+  ///////////////* Die if regel bewirkt das man vom letzen bild durch weiter klicken aufs erste kommt */////////////////////////////
   if (currentImageIndex >= picture.length) {
     currentImageIndex = 0;
   }
@@ -73,7 +73,7 @@ function nextImage() {
 }
 function lastImage() {
   currentImageIndex--;
-  ///////////////* durch die if regel geht wird wen man vom ersten bild zurück will landet man am letzten*/////////////////////////////
+  ///////////////* Die if regel bewirkt das man vom ersten bild durch zurück klicken aufs letzte kommt */////////////////////////////
   if (currentImageIndex < 0) {
     currentImageIndex = picture.length - 1;
   }
