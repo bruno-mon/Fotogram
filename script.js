@@ -25,9 +25,12 @@ function render() {
 }
 
 function getTemplateHtml(index) {
+  let vollerPfad = picture[index];
+  let gekürzterName = vollerPfad.substring(11);
+  let nameohnejpg = gekürzterName.replace(".jpg", "");
   return `
     <div class="single_element">
-    <img onclick="openDialog(${index})" src="${picture[index]}" alt="Bild ${index + 1}" style="max-width: 100%;">
+    <img onclick="openDialog(${index})" src="${picture[index]}" alt="$(nameohnejpg)" style="max-width: 100%;">
     </div>`;
 }
 
@@ -50,6 +53,7 @@ function openDialog(index) {
   ////////////////*img in den Dialog übernehmen*////////////////////////
   let imgRef = document.getElementById("big_picture");
   imgRef.src = picture[index];
+  imgRef.alt = nameohnejpg;
 
   //////////////////////////////* einen index mit der nummer des angezeigten bildes + max bilder ///////////////////////////
   let showindex = document.getElementById("carousel-counter");
