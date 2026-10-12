@@ -219,7 +219,7 @@ Dialog.opened::backdrop{
 }
 .overlay_main img {
    object-fit: cover;
-   width: 100%;
+   
    padding:40px;
    width: 560px;
    height: 375px;
@@ -282,17 +282,29 @@ footer {
       align-items: center;
    }
 
+   main {
+      padding: 0px;
+   }
+
   #galleri {
         display: grid;
         grid-template-columns: 1fr 1fr; /* 1fr 1fr = 2 Spalten, die sich den Platz teilen */
         gap: 16px;   
+       
                     
+    }
+    .single_element {
+      width: 100%;
+      aspect-ratio: 1/1;  /* Erzwingt das Quadrat für das Rasterelement */
+      overflow: hidden;  /* Schneidet überstehende Bildränder sauber ab */
+      border-radius: 18px;
     }
 
     /* In Zeile 115 und 116 wurde flex: 1 0 200px angegeben das muss hier aufgelöst werden weil das bild sonst nicht schrumpfen kann*/
     #galleri img {
         flex: none;         /* Löscht den flex-Befehl von oben */
         width: 100%;        /* Macht das Bild genau so breit wie das Rasterkästchen */
+        height: 100%;
         object-fit: cover;  /* Schneidet das Bild sauber ab, ohne es zu verzerren */
     }
     dialog {
