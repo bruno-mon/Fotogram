@@ -64,7 +64,12 @@ function openDialog(index) {
   /////////////////der befehl um das Moadl/Dialog anzeigen zu lassen//////////////////////////
   dialogRef.showModal();
   dialogRef.classList.add("opened");
+
+  if (event) {
+    event.stopPropagation();
+  }
 }
+
 ///////////////*Dialog Next and Back *///////////////
 function nextImage() {
   currentImageIndex++;

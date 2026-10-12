@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="render()">
+  <body onload="render()" onclick="closeDialog()">
     <header>
       <div class="header_box">
         <img
@@ -23,7 +23,7 @@
       <div id="galleri"></div>
 
       <dialog class="image_overlay" id="mydialog">
-        <div class="overlay_box">
+        <div class="overlay_box" onclick="event.stopPropagation()">
           <header class="overlay_header">
             <h2 id="dialog_titel">Bilddetails</h2>
             <div class="close_button" onclick="closeDialog()">
