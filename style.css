@@ -1,199 +1,115 @@
-/* ==========================================================================
-   1. GLOBALER RESET (Die wichtigste Basis für jedes Webprojekt)
-   ========================================================================== */
 
-/* Das Sternchen gilt für ALLE HTML-Elemente auf der gesamten Webseite.
-   Es sorgt dafür, dass alle Browser bei Null starten und nichts willkürlich verschieben. */
 *, *::before, *::after {
-  /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
-  margin: 0;
-  
-  /* Padding ist der Innenabstand. Auch den setzen wir auf 0, um die volle Kontrolle zu haben. */
-  padding: 0;
-  
-  /* Extrem wichtig! Box-sizing sorgt dafür, dass Padding und Rahmen (Border) 
-     IN die Breite hineingerechnet werden und das Element nicht heimlich größer machen. */
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
-
-
-/* ==========================================================================
-   2. BODY (Die Grundeinstellungen für die gesamte sichtbare Seite)
-   ========================================================================== */
 
 body {
-   /*hier wird display flex angewendet um nachher im main content flex-grow 1; umsetzen zu können (für Fotter an den boden kleben*/
    display: flex;
-   /* column wird gebraucht damit alles untereinander angeordnet wird */
    flex-direction: column;
-  /* Hier legen wir die Schriftart für das gesamte Projekt fest. */
-  font-family: sans-serif;
-  
-  /* Die Hintergrundfarbe der Webseite*/
-  background-color: #06171E;
-  
-  /* Die Standard-Textfarbe */
-  color: #dbd5d5;
-  
-  /* Der Zeilenabstand für Texte, damit alles schön luftig und lesbar wirkt. */
-  line-height: 1.5;
-  
-  /* Sorgt dafür, dass die Seite MINDESTENS so hoch ist wie der gesamte Bildschirm (100 Viewport-Height). */
-  min-height: 100vh;
+   font-family: sans-serif;
+   background-color: #06171E;
+   color: #dbd5d5;
+   line-height: 1.5;  
+   min-height: 100vh;
 }
 
-
-
-/* ==========================================================================
-   3. BILDER-BASIS (Damit die Galerie-Bilder das Layout nicht sprengen)
-   ========================================================================== */
-
 img {
-  /* Bilder verhalten sich standardmäßig wie Text. Mit "block" machen wir sie zu einem eigenständigen Kasten. */
-  display: block;
-  
-  /* Das Bild darf NIEMALS breiter werden als der Container, in dem es drinsteckt (z.B. sein Raster-Kästchen). */
-  max-width: 100%;
-  
-  /* Die Höhe berechnet sich automatisch passend zur Breite, damit das Bild nicht verzerrt oder gestreckt wird. */
-  height: auto;
+   display: block;
+   max-width: 100%;
+   height: auto;
 }
 
 header {
- 
-    
-    /* Breite 100% und maximal 1440px */
     width: 100%;
-    max-width: 1920px;
-    /* Zentriert den Header auf Bildschirmen, die breiter als 1920px sind*/
-    margin: 0 auto;
-    /*Hintergrundfarbe*/
     background-color: #09212A;
-    /* Innenabstand der Objekte (Oben,Rechts,Unten,Links) */
-    
+   
 }
 
 .header_box{
-   /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
-    /* Sorgt für abstand zwischen den Boxen */
     justify-content:flex-start;
     max-width: 1440px;
+    margin: 0 auto;
 }
 .Fotogram_logo{
-
     min-width: 120px;
-   
     padding: 20px 40px;
-
     display:block;
-   
   
 }
 main{
-    
-   /* um den main content in die länge zu ziehen und damit den footer immer ganz unten zu haben */
     flex-grow: 1;
-    /* Breite 100% und maximal 1440px */
     width: 100%;
     max-width: 1440px;
-     /* Margin ist der Außenabstand. Wir setzen ihn auf 0, damit keine ungewollten Lücken entstehen. */
     margin: 0 auto;
     padding: 20px 40px;
 }
 .main_title{
    text-align: center;
-   padding: 20px;
-   
+   padding: 20px;  
 }
 
 #galleri{
    display: flex;
-   /* durch flex-wrap wrap wird den bildern erlaub in die nächste zeile zu springen*/
    flex-wrap: wrap;
    justify-content: center;
    gap:16px;
    padding: 20px;
 }
-#galleri img {
-   /* flex: 1 0 200px ist eine kurzbeschreibung für drei befehele 
-   1: flex grow= (1)gibt an, ob das Bild ungenutzten platz füllen darf.
-   2: flex-shrink (0) gibtn an, ob das bild schrumpfen darf bei null schrumpft es nicht unter 200px
-   3: flex-basis (200px) blockiert die bilder auf die 200px wenn der platz kleiner wird springt das bild in die nächste reihe*/
 
-  flex: 1 0 200px;        
-  
-  /* Verhindert, dass die Bilder verzerrt werden */
-  height: 200px; 
-  width: 200px;   
-  aspect-ratio: 1 / 1; /* NEU: Reserviert sofort den quadratischen Platz */      
-  object-fit: cover; 
-  /* durch trasform wird das bild in einer vorgegeben geschwindigkeit vergrößert und in den uhrsprungszustand gebracht
-  würde trasform direkt im hover effekt stehen würde es nur beim vergrößern funktionieren und beim weg gehen direkt schrumpfen*/
-  
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  /* ohne will-change kam es zu heftigen rucklern bzw eine schlechte Performance beim hovern*/
-  /* PERFORMANCE-BOOST: Meldet dem Browser im Voraus, dass dieses Element animiert wird. 
-   Der Browser lagert das Rendering (scale) dauerhaft von der CPU auf die Grafikkarte (GPU) aus. 
-   Das verhindert Ruckler (Stuttering), weil das Bild auf einer eigenen Grafik-Ebene isoliert wird. */
+#galleri img {
+   flex: 1 0 200px;        
+   height: 200px; 
+   width: 200px;   
+   aspect-ratio: 1 / 1;    
+   object-fit: cover; 
+   border-radius: 12px;
+   transition: transform 0.3s ease;
    will-change: transform;
 }
-#galleri img:hover{
-   
-   /*vergrßert das bild beim hovern um angegeben wert*/
 
+#galleri img:hover{
    transform: scale(1.1);
 }
 
-
-/*======================================== Style Dialog ==================================*/
 .image_overlay{
-   /* Ducrh *, *::before, *::after { margin 0} wird auch der Margin des Dialogs angesprochen und verändert deswegen geben wir hier das normal Margin fürs Display wieder her 
-   damit er wieder in der Mitte geöffnet wird. */
    margin:auto;
    border-radius: 4%;
    background-color: #06171E;
    border: none;
-
 }
-/*
-- Beim geschlossenen Dialog (opacity: 0) ist das Backdrop komplett unsichtbar.
-  - Sobald JS die Klasse '.opened' hinzufügt (opacity: 1), blendet der Browser 
-    das Backdrop über die Dauer der 'transition' (0.8s) weich ein. */
-Dialog::backdrop{
 
+Dialog::backdrop{
    background-color:#41555e80;
    transition: background-color 0.8s ease-in;
-   
 }
+
 Dialog.opened::backdrop{
    opacity: 1;
    background-color:#41555e80;
    transition: background-color 0.8s  ease-in;
 }
+
 .overlay_box{
    display: flex;
    flex-direction: column;
    max-width: 75vh;
-   
 }
-/*==================================== Dialog Header = overlay_header ====================================*/
+
 .overlay_header{
    background-color: #06171E;
    max-height: 80px;
    min-height: 20px;
-
-    display: flex;
+   display: flex;
    justify-content: space-between;
    align-items: center;
    padding: 40px;
-
 }
+
 .overlay_header h2 {
    color:aliceblue;
-  
-
 }
 
 .overlay_header button {
@@ -202,76 +118,61 @@ Dialog.opened::backdrop{
    align-items: end;
    background-color:#06171E;
    border: none;
-  
    transition: transform 0.3s ease;
-   
 }
+
 .overlay_header button:hover{
    transform: scale(1.2);
 }
 
-/*==================================== Dialog Main = overlay_main ====================================*/
 .overlay_main{
-   background-color: #06171E;
-   
+   background-color: #06171E; 
 }
+
 .overlay_main img {
    object-fit: cover;
-   
    padding:40px;
    width: 70vh;
    height: 70vh;
-   
 }
-/*==================================== Dialog Footer = overlay_footer ====================================*/
 
 .overlay_footer{
    background-color: #06171E;
    max-height: 80px;
    gap:70px;
-
    display: flex;
    justify-content: space-between;
    align-items: center;
    padding: 40px;
 }
+
 .overlay_footer button{
    background-color: #06171E;
    border: none;
    transition: transform 0.3s ease;
-
 }
+
 .overlay_footer button:hover{
-
-transform: scale(1.2);
+   transform: scale(1.2);
 }
+
 .btn_back{
    rotate: 180deg;
 }
+
 .overlay_footer span{
    color: aliceblue;
 }
 
-
-/*====================================  Style Footer ====================================*/
 footer {
-    /* Sorgt für die gewünschte Horizontale Ausrichtung so werden Blöcke nebeneinander angesetzt*/
     display: flex;
-    /* Sorgt für eine Horizontale zentrierung (von links nach rechts) */
     justify-content: center;
-    /* sorgt für eine Vertikale zentrierung (von oben nach unten)*/
     align-items: center;
-    /* Breite 100% und maximal 1920px */
     width: 100%;
-    max-width: 1920px;
-    /* Höhe des Footers*/
     height: 128px;
-    /* Zentriert den Footer auf Bildschirmen, die breiter als 1920px sind*/
     margin: 0 auto;
     background-color: #09212A;
 }
-
-/*========================================== @media (max-width: 680px) and (min-width: 371px) =======================================*/
 
 @media (max-width: 680px) and (min-width: 371px){
 
@@ -337,12 +238,11 @@ footer {
 
     .overlay_main img {
       width: 100%;
-      height: 70vh;        /* Zwingt das Bild, 70% des platzes einzunehmen */
-      object-fit: cover;   /* WICHTIG: Schneidet links/rechts etwas ab, hält das Bild aber unverzerrt und hoch */
+      height: 70vh;        
+      object-fit: cover; 
       padding: 0 16px;     
       box-sizing: border-box;
     }
-
 
     img, button {
       transition: all 0.3s ease-in-out;
@@ -356,8 +256,6 @@ footer {
    img:active, button:active {
       transform: scale(0.8);
       opacity: 0.8;
-   }
-
-    }
+   }}
     
 
