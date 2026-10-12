@@ -288,25 +288,28 @@ footer {
 
   #galleri {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 1fr 1fr = 2 Spalten, die sich den Platz teilen */
+        grid-template-columns: 1fr 1fr; 
         gap: 16px;   
-       
-                    
     }
+
     .single_element {
       width: 100%;
-      aspect-ratio: 1/1;  /* Erzwingt das Quadrat für das Rasterelement */
-      overflow: hidden;  /* Schneidet überstehende Bildränder sauber ab */
+      aspect-ratio: 1/1;  
+      overflow: hidden;  
       border-radius: 18px;
     }
 
-    /* In Zeile 115 und 116 wurde flex: 1 0 200px angegeben das muss hier aufgelöst werden weil das bild sonst nicht schrumpfen kann*/
     #galleri img {
-        flex: none;         /* Löscht den flex-Befehl von oben */
-        width: 100%;        /* Macht das Bild genau so breit wie das Rasterkästchen */
+        flex: none;         
+        width: 100%;        
         height: 100%;
-        object-fit: cover;  /* Schneidet das Bild sauber ab, ohne es zu verzerren */
+        object-fit: cover;  
     }
+
+    .image_overlay{
+      border-radius: 0%;
+    }
+
     dialog {
       width: 100vw;
       height: 100vh;
@@ -315,13 +318,41 @@ footer {
       margin: 0;
       border: none;
       border-radius: 0%;
+      padding: 0; 
     }
-     img, button {
+
+    
+
+    .overlay_box {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .overlay_main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay_main img {
+      width: 100%;
+      height: 70vh;        /* Zwingt das Bild, 70% des platzes einzunehmen */
+      object-fit: cover;   /* WICHTIG: Schneidet links/rechts etwas ab, hält das Bild aber unverzerrt und hoch */
+      padding: 0 16px;     
+      box-sizing: border-box;
+    }
+
+
+    img, button {
       transition: all 0.3s ease-in-out;
    }
-      .overlay_header button:hover, 
+
+   .overlay_header button:hover, 
    .overlay_footer button:hover {
-      transform: scale(1); /* Setzt den Hover-Effekt auf Smartphones zurück */
+      transform: scale(1); 
    }
 
    img:active, button:active {
