@@ -53,23 +53,22 @@ function openDialog(index) {
   }
 }
 
-function nextImage() {
-  currentImageIndex++;
-
+function chancheImage(action) {
+  if (action === "next") {
+    currentImageIndex++;
+  }
+  if (action === "prev") {
+    currentImageIndex--;
+  }
   if (currentImageIndex >= picture.length) {
     currentImageIndex = 0;
   }
-  openDialog(currentImageIndex);
-}
-
-function lastImage() {
-  currentImageIndex--;
   if (currentImageIndex < 0) {
     currentImageIndex = picture.length - 1;
   }
-
   openDialog(currentImageIndex);
 }
+
 function closeDialog() {
   dialogRef.close();
   dialogRef.classList.remove("opened");
