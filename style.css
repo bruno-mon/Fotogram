@@ -70,7 +70,8 @@ main{
    will-change: transform;
 }
 
-#galleri img:hover{
+#galleri img:hover,
+#galleri img:focus-visible{
    transform: scale(1.1);
 }
 
