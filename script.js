@@ -21,13 +21,20 @@ function render() {
   }
 }
 
+function getImageName(index) {
+  let filePath = picture[index];
+  let fileName = filePath.substring(11);
+
+  return fileName.replace(".jpg", "");
+}
+
 function getTemplateHtml(index) {
-  let vollerPfad = picture[index];
-  let gekürzterName = vollerPfad.substring(11);
-  let nameohnejpg = gekürzterName.replace(".jpg", "");
+  let imageName = getImageName(index);
   return `
     <div class="single_element">
-    <img onclick="openDialog(${index})" src="${picture[index]}" alt="(${nameohnejpg})" style="max-width: 100%;">
+    <img onclick="openDialog(${index})" src="${picture[index]}" alt="(${imageName})" style="max-width: 100%;" tabindex="0"
+    onkeydown="if(event.key === 'Enter' || event.key === ' ') { openDialog(${index}); }"
+    >
     </div>`;
 }
 
@@ -35,14 +42,12 @@ const dialogRef = document.getElementById("mydialog");
 
 function openDialog(index) {
   currentImageIndex = index;
+  let imageName = getImageName(index);
   let titleRef = document.getElementById("dialog_titel");
-  let vollerPfad = picture[index];
-  let gekürzterName = vollerPfad.substring(11);
-  let nameohnejpg = gekürzterName.replace(".jpg", "");
-  titleRef.innerText = nameohnejpg;
+  titleRef.innerText = imageName;
   let imgRef = document.getElementById("big_picture");
   imgRef.src = picture[index];
-  imgRef.alt = nameohnejpg;
+  imgRef.alt = imageName;
   let showindex = document.getElementById("carousel-counter");
   showindex.innerText = currentImageIndex + 1 + "/" + picture.length;
   dialogRef.showModal();
