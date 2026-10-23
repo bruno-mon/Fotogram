@@ -52,6 +52,7 @@ function openDialog(index) {
   showindex.innerText = currentImageIndex + 1 + "/" + picture.length;
   dialogRef.showModal();
   dialogRef.classList.add("opened");
+  document.body.style.overflow = "hidden";
 
   if (event) {
     event.stopPropagation();
@@ -77,4 +78,5 @@ function chancheImage(action) {
 function closeDialog() {
   dialogRef.close();
   dialogRef.classList.remove("opened");
+  document.body.style.overflow = "auto";
 }
